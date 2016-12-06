@@ -4,6 +4,7 @@ var trace = function(msg){ console.log(msg); };
 var displayList;
 var cmd = "";
 var timer;
+var formObj;
 
 function pageLoad_init()
 {
@@ -21,6 +22,11 @@ function form_setup()
 	displayList.form = document.querySelector(".cmd-form");
 	displayList.formField = document.querySelector(".cmd-form .cmd-field");
 	displayList.formButton = document.querySelector(".cmd-form button");
+
+	formObj = {};
+	formObj.cmd = "";
+	formObj.interface = false;
+	formObj.flowNum = 0;
 }
 
 function form_request()
@@ -28,6 +34,8 @@ function form_request()
 	displayList.layerForm.classList.remove("layer-hide");
 
 	displayList.formButton.addEventListener("click", form_event, false);
+
+	formObj.interface = true;
 }
 
 function form_cancel()
@@ -41,16 +49,30 @@ function form_event(event)
 
 	displayList.formButton.removeEventListener("click", form_event, false);
 
-	formTest();
+	form_read();
 }
+
+function form_read()
+{
+	if(formObj.interface)
+	{
+		formObj.interface = false;
+
+		formObj.cmd = displayList.formField.value;
+
+	}
+}
+
+
+// DEAD
 
 function formTest()
 {
 	var delay;
 
-	cmd = displayList.formField.value;
+	formObj.cmd = displayList.formField.value;
 	
-	if(cmd === "forwards")
+	if(formObj.cmd === "forwards")
 	{
 		alert("YES");
 	}
@@ -61,7 +83,7 @@ function formTest()
 	}
 	
 	// return false;
-	trace(cmd);
+	trace(formObj.cmd);
 
 	delay = setTimeout(form_cancel, 0.5 * 1000);
 }
