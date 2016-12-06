@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+html, body
+{
+	width: 100%;
+	height: 100%;
+
+	overflow: hidden;
+
+	font-family: 'Reem Kufi', sans-serif;
+	font-size: 100px;
+}
+
+.fill
+{
+	position: absolute;
+	margin: auto;
+	left: 0; right: 0; top: 0; bottom: 0;
+}
+
+.layer 
+{
+	position: absolute;
+	margin: inherit;
+	left: inherit ; right: inherit; top: inherit; bottom: inherit;
+}
+
+.layer-tween
+{
+	transition: 1200ms ease-in-out
+}
+
+.display-wrapper
+{
+	width: 100%;
+	height: 100%;
+
+	position: relative;
+
+	overflow: inherit;
+}
+
+.display-container
+{
+	width: 100%;
+	height: 100%;
+
+	background: linear-gradient(to bottom, #00225D 0%, #763262 100%);
+}
+
+.form-block
+{
+	width: 280px;
+	padding: 20px;
+	position: absolute;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+
+	outline: 1px solid #F3CC4F;
+
+	color: #F3CC4F;
+}
+
+.layer-hide
+{
+	transform: translateY(-100%);
+}
+
+.cmd-form
+{
+	/*REMOVE EMPTY SPACE*/
+	font-size: 0;
+	width: inherit;
+}
+
+.form-block .cmd-title
+{
+	width: 100%;
+	font-size: 30px;
+	margin: 10px auto 20px auto;
+	text-align: center;
+	text-transform: uppercase;
+
+}
+
+.form-block input[type=text]
+{
+	width: 80%;
+	padding: 20px;
+	border: none;
+	border-radius: 10px;
+	display: block;
+
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+	
+	background: #171635;
+
+	position: relative;
+	margin: 0 auto;
+
+	transition: background 1s ease-in-out;
+}
+
+.form-block input[type=text]:focus
+{
+	background: black;
+	outline: none;
+}
+
+.form-block input[type=submit]
+{
+	width: 50%;
+	padding: 20px;
+	border: none;
+	border-radius: 10px;
+	display: block;
+
+	cursor: pointer;
+
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #00225D;
+
+	background: #F3CC4F;
+
+
+	position: relative;
+	margin: 20px auto 10px auto;
+
+	transition: background 1s ease-in-out;
+}
+
+.form-block input[type=submit]:hover
+{
+	background: #FFF;
+}
+
+.cmd-form button
+{
+	width: 50%;
+	padding: 20px;
+	border: none;
+	border-radius: 10px;
+	display: block;
+
+	cursor: pointer;
+
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #00225D;
+
+	background: #F3CC4F;
+
+	position: relative;
+	margin: 20px auto 10px auto;
+
+	transition: background 1s ease-in-out;
+}
+
+.cmd-form button:focus
+{
+	outline: none;	
+}
+
+.cmd-form button:hover
+{
+	background: #FFF;
+}
+
+
+
