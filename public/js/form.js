@@ -58,14 +58,14 @@ function form_request()
 
 function form_cancel()
 {
+	displayList.formButton.removeEventListener("click", form_event, false);
+
 	displayList.layerForm.classList.add("layer-hide");
 }
 
 function form_event(event)
 {
 	event.preventDefault();
-
-	displayList.formButton.removeEventListener("click", form_event, false);
 
 	form_read();
 }
@@ -75,6 +75,8 @@ function form_read()
 	var checkAction = {};
 	var catchAction;
 	var applyAction = "";
+	
+	var cmdFound = false;
 
 	if(formObj.interface)
 	{
@@ -92,16 +94,27 @@ function form_read()
 
 			if(checkFor === formObj.cmd)
 			{
+				cmdFound = true;
+
 				catchAction = i;
 				
 				applyAction = checkAction['reaction' + catchAction];
-				
+
 				trace(applyAction);
 				
 				break;
 			}
 		}
 
+		if(cmdFound)
+		{
+			form_cancel();
+		}
+
+		else
+		{
+			formObj.interface = true;
+		}
 	}
 }
 
