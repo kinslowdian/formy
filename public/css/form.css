@@ -51,10 +51,21 @@ html, body
 .form-block
 {
 	width: 280px;
-	padding: 20px;
+	/*padding: 20px;*/
 	position: absolute;
 	left: 50%; top: 50%;
 	transform: translate(-50%, -50%);
+
+/*	outline: 1px solid #F3CC4F;
+
+	color: #F3CC4F;*/
+}
+
+.form-inner
+{
+	width: inherit;
+	padding: 20px;
+	position: relative;
 
 	outline: 1px solid #F3CC4F;
 

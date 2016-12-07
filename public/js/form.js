@@ -20,6 +20,7 @@ function form_setup()
 	displayList = {};
 	displayList.layerForm 	= document.querySelector(".layer-form");
 	displayList.formBlock 	= document.querySelector(".form-block");
+	displayList.formInner	= document.querySelector(".form-inner");
 	displayList.form 		= document.querySelector(".cmd-form");
 	displayList.formField 	= document.querySelector(".cmd-form .cmd-field");
 	displayList.formButton 	= document.querySelector(".cmd-form button");
@@ -116,7 +117,7 @@ function form_read()
 		{
 			formObj.interface = true;
 			displayList.form.reset();
-			displayList.formBlock.classList.add("cmd-fault");
+			displayList.formInner.classList.add("cmd-fault");
 		}
 	}
 }
