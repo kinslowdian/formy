@@ -114,6 +114,8 @@ function form_read()
 		else
 		{
 			formObj.interface = true;
+			displayList.form.reset();
+
 		}
 	}
 }
