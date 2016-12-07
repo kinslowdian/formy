@@ -26,7 +26,25 @@ function form_setup()
 	formObj = {};
 	formObj.cmd = "";
 	formObj.interface = false;
+	formObj.gameList = new Array();
 	formObj.flowNum = 0;
+
+	form_data();
+}
+
+function form_data()
+{
+	var l = {};
+
+	l.action0 		= "forwards";
+	l.action1 		= "left";
+	l.action2 		= "back";
+	l.actionAll 	= 3;
+	l.reaction0		= "F";
+	l.reaction1		= "L";
+	l.reaction2		= "B";
+
+	formObj.gameList.push(l);
 }
 
 function form_request()
@@ -54,11 +72,35 @@ function form_event(event)
 
 function form_read()
 {
+	var checkAction = {};
+	var catchAction;
+	var applyAction = "";
+
 	if(formObj.interface)
 	{
 		formObj.interface = false;
 
-		formObj.cmd = displayList.formField.value;
+		checkAction = formObj.gameList[formObj.flowNum];
+
+		formObj.cmd = displayList.formField.value.toUpperCase();
+
+		for(var i = 0; i < checkAction.actionAll; i++)
+		{
+			var checkFor = checkAction['action' + i].toUpperCase();
+
+			trace(formObj.cmd + " " + checkFor);
+
+			if(checkFor === formObj.cmd)
+			{
+				catchAction = i;
+				
+				applyAction = checkAction['reaction' + catchAction];
+				
+				trace(applyAction);
+				
+				break;
+			}
+		}
 
 	}
 }
