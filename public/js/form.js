@@ -18,10 +18,11 @@ function pageLoad_init()
 function form_setup()
 {
 	displayList = {};
-	displayList.layerForm = document.querySelector(".layer-form");
-	displayList.form = document.querySelector(".cmd-form");
-	displayList.formField = document.querySelector(".cmd-form .cmd-field");
-	displayList.formButton = document.querySelector(".cmd-form button");
+	displayList.layerForm 	= document.querySelector(".layer-form");
+	displayList.formBlock 	= document.querySelector(".form-block");
+	displayList.form 		= document.querySelector(".cmd-form");
+	displayList.formField 	= document.querySelector(".cmd-form .cmd-field");
+	displayList.formButton 	= document.querySelector(".cmd-form button");
 
 	formObj = {};
 	formObj.cmd = "";
@@ -115,7 +116,7 @@ function form_read()
 		{
 			formObj.interface = true;
 			displayList.form.reset();
-
+			displayList.formBlock.classList.add("cmd-fault");
 		}
 	}
 }

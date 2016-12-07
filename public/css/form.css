@@ -172,5 +172,17 @@ html, body
 	background: #FFF;
 }
 
+.cmd-fault
+{
+	animation: cmdFaultFrames 200ms linear forwards 4;
+}
+
+@keyframes cmdFaultFrames
+{
+	0%		{transform: scale(1);}
+	50%		{transform: scale(0.8);}
+	100%	{transform: scale(1);}
+}
+
 
 
